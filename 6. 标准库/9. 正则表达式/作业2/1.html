@@ -19,8 +19,82 @@
             str += result[0] + "\n";
         }
         str = `匹配${n}次\n` + str;
-        console.log(str);
+        console.log(str);  //匹配三次 433 345 234
+
+
+        var reg =/\w?/g;
+        var str = 'aaaaaaaaa';
+      console.log( str.match(reg)) 
+      var  reg =/^abc$/;
+      var str ='abcabc';
+      console.log(str.match(reg))
+
+
+
+     var  reg = /ab/g;
+     var  str = 'abababababab';
+     console.log(reg.exec(str))  //检索字符串中指定的值。返回找 到的值，并确定其位置  相当于游标一直在变，一圈一圈的转 
+     console.log(reg.exec(str)) 
+     console.log(reg.exec(str)) 
+     console.log(reg.exec(str)) 
+    
+
+    console.log(str.search(reg))  //检测与正则表达式匹配的值
+
+
+
+
+     var   reg =  /(\w)\1(\w)\2/
+     var  str = 'aabb';
+     console.log(str.match(reg))   //aabb
+     console.log(reg.exec(str))
+
+
+
+
+
+
+
+    var str = 'edbaabbbbee';
+    var  reg =/(\w)\1(\w)\2/g;
+
+    console.log(str.search(reg));
+
+   
+
+    var str = 'aaaa';
+     var reg = /(\w)\1/  ;   //\1的意思是反向引用第一个子表达式{w}的内容 
+     console.log(str.match(reg)) 
+
+     var str = 'aabb';
+     var  reg = /(\w)\1(\w)\2/;  //\2的意思是反向引用第二个子表达式{w}的内容   console.log(reg.exec(str)) 引用子表达式的内容也出来了和str.match(reg)一样  
+     console.log(str.match(reg));
+
+
+
+    //  aabb=>bbaa  
+    var str = 'aabb';
+    var  reg = /(\w)\1(\w)\2/g
+   console.log(str.replace(reg,'$2$2$1$1')); 
+
+
+//    xyxy=>yxyx
+     
+     var  str = 'xyxy';
+     var reg = /(\w)(\w)\1\2/g;
+     console.log(str.replace(reg,function($,$1,$2){ 
+         return $2 + $1 +$2 +$1 +'abe' 
+     }));   //yxyxabe  第一个参数随便填，第二个参是第一个子表达式的内容，第二个参是第二个子表达式的内容 返回字符串就行
+    
+      
+    //  the-first-name => theFirstName  先找规律 -f替换成F -n替换成N
+     var str = 'the-first-name';
+     var reg = /-(\w)/g;
+     console.log(str.replace(reg,function($,$1){
+         return   $1.toUpperCase();
+     })) //theFirstName
+
     </script>
-</body>
+</body> 
 
 </html>

@@ -15,12 +15,14 @@
             lastName: "进",
             age: 18,
             sayHello: function() {
-                console.log(`我叫${this.firstName}${this.lastName}，今年${this.age}岁了`);
+                console.log(`我叫${obj.firstName}${obj.lastName}，今年${obj.age}岁了`);
+                console.log('我叫'+this.firstName+this.lastName+'今年'+this.age+'岁了')
             }
         };
+        // obj.sayHello()
 
         var obj2 = obj;
-        obj = 234;
+        obj = 234;  
 
         obj2.sayHello();
 
@@ -28,10 +30,12 @@
 
         // obj.sayHello();
 
-        // obj.firstName = "姬";
-        // obj.lastName = "成";
-        // obj.age = 108;
-        // obj.sayHello();
+        obj2.firstName = "姬";
+        obj2.lastName = "成";
+        obj.age = 108;
+
+        // obj.sayHello()
+        obj2.sayHello();
     </script>
 </body>
 

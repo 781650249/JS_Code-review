@@ -11,22 +11,60 @@
 <body>
     <script>
         // 创建一个用户
-        function createUser(name, age, gender) {
+        function CreateUser(name, age, gender) {
             return {
-                name,
+                name:'lili',
                 age,
                 gender,
                 sayHello() {
+                    console.log(this)
                     console.log(`我叫${this.name}，年龄${this.age}岁，性别${this.gender}`);
                 }
+                
             };
         }
 
-        var u1 = createUser("张三", 18, "男");
-        u1.sayHello();
-        var u2 = createUser("姬成", 20, "男");
-        u2.sayHello();
+        var u1 =CreateUser("张三", 18, "男");
+        // u1.sayHello();
+
+
+        var u2 =new CreateUser("姬成", 20, "男");
+        // u2.sayHello();
         console.log(u1 === u2);
+
+
+
+        function  user(name,age,gender){
+            this.name=name;
+            this.age=age;
+            this.gender =gender;
+            this.sayHello=function(){
+                console.log(`我叫${this.name}，年龄${this.age},性别${gender}`)
+            }
+            // return [1,23,4]
+            // return 123
+            // return {   //返回对象可以用对象里的方法
+            //     name,
+            //     age,
+            //     sayHello:function(){
+            //         console.log('用我的方法妈') //队形
+            //     }
+            // }
+            return function(){
+                console.log(`哈哈 变了`)  //返回函数直接实例对象直接调用就可以返回
+            }
+        }
+
+        var a1 = new user('haha',18,'男');
+        console.log(a1)
+        // a1.sayHello()
+        // a1()
+
+
+        var a2 =user('xixi',19,'女');
+        console.log(a2)
+        a2.sayHello()
+        // a2()
     </script>
 </body>
 

@@ -10,14 +10,14 @@
 
 <body>
     <script>
-        var reg = /[\u4e00-\u9fa5]/g;
+        var reg = /[\u4e00-\u9fa5]/g;  //匹配多少个汉字
         var s = "fgdgg啊手动sdf阀梵蒂冈sd234";
         var n = 0;
         while (reg.test(s)) {
             n++;
         }
-        console.log(n);
-    </script>
+        console.log(n); //7
+    </script>    
 </body>
 
 </html>

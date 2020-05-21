@@ -19,7 +19,7 @@ function Charactor(name, attack, defence, hp, critRate) {
      * 打印信息
      */
     this.print = function () {
-        console.log(`${this.name}\t生命：${this.hp}\t攻击：${this.attack}\t防御：${this.defence}\t暴击率：${this.critRate}%`);
+        console.log(`${this.name}       生命：${this.hp}\t攻击：${this.attack}\t防御：${this.defence}\t暴击率：${this.critRate}%`);
     }
 
     /**
@@ -68,3 +68,9 @@ console.log("=========================");
 hero.print();
 monster.print();
 console.log("游戏结束");
+
+
+
+
+
+

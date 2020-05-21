@@ -16,11 +16,16 @@
         //对象中包含两个属性：name、score
 
         var newArr = arr.map(function(item, i) {
-            return {
-                name: "学生" + (i + 1),
-                score: item
-            }
+            return ["学生" + (i + 1),
+                       '学号'+item  
+                     ]
+            //    return {
+            //     "学生" : (i + 1),
+            //     '学号':item  
+            //    }
+            
         });
+        console.log(newArr)
 
         //得到一个学生的姓名数组
         newArr = newArr.map(function(item) {

@@ -10,13 +10,32 @@
 
 <body>
     <script>
-        var arr = [1, 2];
-        
-        var sum = arr.reduce(function(s, item) {
-            console.log("回调", s, item);
-            return s + item;
-        }, 0);
-        console.log(sum);
+        // var arr = [1, 2];
+
+        // var sum = arr.reduce(function (s, item) {
+        //     console.log("回调", s, item);
+        //     s = s + item;
+        //     return s;
+        //     // return s + item;
+        // }, 0);
+        // console.log(sum);
+
+
+        /* 
+        var arr = [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6];
+       去掉数组中的负数，然后对每一项平方，然后再对每一项翻倍，然后求和
+        不许使用循环
+        */
+        var sum =0 ;
+        var arr = [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6];
+        var newarr = arr.filter((item,index)=>{
+            return item>0 
+        }).map((item)=>{
+            return (item*item)*2
+        }).reduce((prev,cur)=>{
+            return prev+cur
+        },0)
+        console.log(newarr)
     </script>
 </body>
 
